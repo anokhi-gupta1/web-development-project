@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   background: linear-gradient(180deg, #461540, #006699, #286b85,rgb(31, 29, 13));/* Dark blue to teal gradient) */
+   background-image: radial-gradient(black,rgb(20, 20, 49),rgb(8, 78, 8),rgb(82, 6, 19));
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow: hidden;
+  }
+.container {
+  perspective: 1000px;
+}
+.card {
+  width: 300px;
+  height: 400px;
+  background-image:radial-gradient( rgba(3, 26, 26, 0.8),rgb(6, 6, 80),blue-green); /* Transparent dark blue-green background */
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(71, 178, 228, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: transform 0.5s;
+}
+.card:hover {
+  transform: rotateY(35deg) rotateX(7deg);
+  box-shadow: 0 30px 40px rgba(242, 13, 227, 0.8);
+  /* transform: rotateX(30deg) rotateY(5deg); */
+}
+.card-content h2 p:hover{
+  box-shadow: 0 20px 40px rgba(238, 249, 39, 0.9);
+}
+.card-content {
+  text-align: center;
+  transform: translateZ(50px);
+}
+.card-content h2 {
+  margin: 0;
+  font-size: 1.8em;
+}
+.card-content p {
+  margin: 10px 0;
+  font-size: 1.2em;
+}
+.icons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 2em;
+}
+.icons i {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.icons i:hover {
+  transform: translateY(-5px);
+}
+
+.decorative-circle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, #ffffff 20%, transparent 20%);
+  background-size: 150% 150%;
+  animation: animateCircle 5s linear infinite;
+  transform: translateZ(100px);
+}
+
+@keyframes animateCircle {
+  0% {
+      background-position: 0 0;
+  }
+  100% {
+      background-position: -300% -300%;
+  }
+}
