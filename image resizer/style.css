@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #195b59, #5a1d53,rgb(42, 42, 94),black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  width: 100%;
+
+
+ 
+  
+ 
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #fff;
+  font-weight: 700;
+  text-align: left;
+  width: 100%;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.image {
+  width: 100%;
+  max-width: 100px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+input[type="number"], input[type="checkbox"] {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-weight: 700;
+  text-align: left;
+  width: 100%;
+}
+
+.checkbox-label input {
+  margin-right: 10px;
+}
+
+.resize-button, .download-button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #007BFF;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.resize-button:hover, .download-button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+@media (max-width: 400px) {
+  .container {
+      padding: 15px;
+  }
+}
+#aspect-ratio ,#reduce-size{
+margin-right: -290px;
+}
+#height , #width{
+  display: flex;
+ 
+  justify-content: center;
+   text-align: center;
+}
