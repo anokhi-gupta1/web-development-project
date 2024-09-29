@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather-Based Suggestions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather-Based Song & Clothes Suggestion</h1>
+
+        <div class="input-container">
+            <label for="cityInput">Enter City: </label>
+            <input type="text" id="cityInput" placeholder="City name">
+            <button onclick="getWeather()">Get Weather</button>
+        </div>
+
+        <div class="content">
+            <p id="weatherInfo"></p>
+            <p id="songSuggestion"></p>
+            <p id="clothesSuggestion"></p>
+            <audio id="weatherSong" controls></audio>
+        </div>
+    </div>
+
+    <script>
+        const apiKey = '22793bdca96eea56f6184949081b7f51';
+
+        function getWeather() {
+            const city = document.getElementById('cityInput').value;
+            if (city === '') {
+                alert('Please enter a city name');
+                return;
+            }
+
+            const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+            fetch(weatherUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const weatherDescription = data.weather[0].description;
+                    const temperature = data.main.temp;
+                    const cityName = data.name;
+                    displayWeather(cityName, weatherDescription, temperature);
+                    suggestSong(weatherDescription);
+                    suggestClothes(weatherDescription, temperature);
+                })
+                .catch(error => {
+                    alert('Could not fetch weather data. Please try again.');
+                });
+        }
+
+        function displayWeather(city, description, temp) {
+            const weatherInfo = document.getElementById('weatherInfo');
+            weatherInfo.innerHTML = `Current weather in ${city}: ${description}, ${temp}°C`;
+        }
+
+        function suggestSong(weather) {
+            let song;
+            let songUrl;
+
+            if (weather.includes('rain')) {
+                song = '🎶 How about "Raindrops Keep Falling on My Head" 🎶';
+                songUrl = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3';
+            } else if (weather.includes('clear')) {
+                song = '🎶 Perfect day for "Here Comes the Sun"! 🎶';
+                songUrl = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3';
+            } else if (weather.includes('clouds')) {
+                song = '🎶 Maybe listen to "Cloudy Days"! 🎶';
+                songUrl = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3';
+            } else if (weather.includes('snow')) {
+                song = '🎶 Enjoy the snow with "Let It Snow!" 🎶';
+                songUrl = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3';
+            } else {
+                song = '🎶 A good day to listen to any of your favorite songs! 🎶';
+                songUrl = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3';
+            }
+
+            const songSuggestion = document.getElementById('songSuggestion');
+            songSuggestion.innerHTML = song;
+
+            const audioElement = document.getElementById('weatherSong');
+            audioElement.src = songUrl;
+            audioElement.load();
+            audioElement.play().catch(function(error) {
+                console.log("Autoplay prevented. User interaction is needed to play the song.");
+            });
+        }
+
+        function suggestClothes(weather, temp) {
+            let clothesSuggestionText = '';
+
+            if (temp > 30) {
+                clothesSuggestionText = '☀️ It\'s hot! Wear light, breathable clothes like T-shirts and shorts.';
+            } else if (temp > 20 && temp <= 30) {
+                clothesSuggestionText = '🌤 It\'s warm. A light jacket or long-sleeved shirt with jeans will be comfortable.';
+            } else if (temp > 10 && temp <= 20) {
+                clothesSuggestionText = '🍂 It\'s a bit cool. You might want to wear a sweater or a light coat.';
+            } else if (temp <= 10) {
+                clothesSuggestionText = '❄️ It\'s cold! Bundle up with a heavy coat, scarf, and gloves.';
+            }
+
+            if (weather.includes('rain')) {
+                clothesSuggestionText += ' Don\'t forget to carry an umbrella or a raincoat!';
+            } else if (weather.includes('snow')) {
+                clothesSuggestionText += ' Make sure to wear warm boots and a hat to stay cozy in the snow.';
+            }
+
+            const clothesSuggestion = document.getElementById('clothesSuggestion');
+            clothesSuggestion.innerHTML = clothesSuggestionText;
+        }
+    </script>
+</body>
+</html>
