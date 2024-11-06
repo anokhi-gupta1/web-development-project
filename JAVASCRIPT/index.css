@@ -1,0 +1,42 @@
+/* Center everything within the section */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    /* background-image: linear-gradient(to right, rgba(92, 145, 229, 1), rgba(152, 63, 198, 1)); */
+}
+
+/* Styling for buttons to enhance appearance */
+#mybutton, #mybutton2 {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+/* Center and style the text and code section */
+h2 {
+    color: white;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Highlight the .copycode div */
+.copycode {
+    font-family: monospace;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.5); /* Add a background color for highlighting */
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: fit-content; /* Adjusts width to fit the content */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adds a shadow effect */
+    text-align: center;
+}
