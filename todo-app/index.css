@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* General styles for the page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d9d9f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+/* Container for the to-do list */
+.todo-lists-elem {
+    width: 100%;
+    max-width: 300px;
+    background: #eedada;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(88, 39, 39, 0.2);
+    padding: 20px;
+}
+
+/* Style for each to-do item */
+.main_todo_div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f1f1f1;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+.main_todo_div{
+    border: 5px double green;
+}
+/* To-do item text */
+.main_todo_div li {
+    list-style: none;
+    font-size: 16px;
+    color: #333;
+ 
+}
+
+/* Delete button */
+.deletebtn {
+    background-color: #ff4d4d;
+    border: none;
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for delete button */
+.deletebtn:hover {
+    background-color: #ff3333;
+}
+
+/* Add button */
+.btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for add button */
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* Hover effect for to-do items */
+.main_todo_div:hover {
+    background-color: #e6e6e6;
+}
+#inputValue{
+    width: 50;
+    height: 50;
+    border: 6px double black;
+    font-size: 15px;
+
+}
