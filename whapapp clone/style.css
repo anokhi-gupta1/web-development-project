@@ -1,0 +1,331 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(241, 248, 228);
+    padding: 0 10px;
+}
+/* -------Navbar */
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(241, 248, 228);
+    padding:10px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 80px;
+    font-size: 20px;
+    width: 100%;
+    position: fixed;
+}
+.nav .left >img{
+   width: 120px;
+
+}
+.nav .centre{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+.nav .centre .hov #arrow{
+    transform: rotate(-90deg);
+}
+
+.nav .right .btn{
+    background-color: rgb(39, 241, 39);
+    width:30rem;
+    height:40px;
+    border-radius: 35px;
+    padding: 10px 20px;
+    font-size: 15px;
+}
+.nav .centre .hov {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    /* font-size: 18px; */
+    color: #333;
+    text-align: center;
+  }
+.nav .centre .hov::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    /* background-color: #00f; */
+    transition: width 0.7s ease-in-out;
+    padding-left: 2px;
+  }
+.nav .centre .hov:hover::after {
+    width: 50%;
+    background-color: aquamarine;
+  
+  }
+/* section1 */
+.section1{
+    padding: 100px;
+  height: 50rem;
+  width: 96%;
+  margin-left:15px ;
+  border-radius: 60px;
+    background-color: rgb(241, 248, 228); /* Light gray */
+    background-image: url('whatsApp/MaaBeti.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.section1 .doughter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.section1 .msg{
+   height: 35rem;
+   width: 50%;
+   padding: 15px;
+   margin: 50px;
+    /* background-color: aqua; */
+}
+.section1 .msg >.p1{
+    font-size: 60px;
+    gap: 4px;
+   align-items: center;
+    font-weight: bold;
+    color: rgb(241, 248, 228);
+    padding: auto;
+    border-radius: 20px;
+    margin-top: 20px;
+    
+}
+.section1 .msg >.p2{
+    /* font-size: 30px; */
+    align-items: center;
+    font-weight: bold;
+    color: rgb(241, 248, 228);
+    padding: 20px 10px;
+    border-radius: 20px;
+    margin-top: 20px;
+    
+}
+.section1 .chat{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    /* background-color: aqua; */
+    height: 40rem;
+}
+.section1 .chat img{
+    width: 70%;
+    /* animation:moveUp 2s ease-in-out; */
+}
+.section1 .chat .c1{
+    padding-top: 10%;
+    animation:moveUp 1s ease-in-out;
+
+}
+.section1 .chat .emotion{
+    animation:moveUp 2.2s ease-in-out;
+}
+
+@keyframes moveUp{
+    0%{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.section1 .chat .tea{
+animation:moveUp 1s ease-in-out;
+}
+.section1 .chat .voice{
+    padding-top: 10%;
+    animation:moveUp 1.8s ease-in-out;
+}
+.section1 .chat .c2{
+    padding-top: 3%;
+    animation:moveUp 2.8s ease-in-out;
+}
+.btn2{
+    background-color: rgb(39, 241, 39);
+    width:30%;
+    height:40px;
+    border-radius: 35px;
+    padding: 10px;
+    font-size: 15px;
+}
+.para{
+    text-align: right;
+    font-size: 17px;
+    padding-top: 10px;
+   
+    margin-right: -115px;
+}
+.section2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+align-items: center;
+gap: 20px;
+}
+.section2>img{
+    width: 80%;
+    height: 60%;
+}
+.section2>p{
+    font-size: 30px;
+    font-weight: 520;
+    text-align: center;
+    letter-spacing: 1.5px;
+    line-height: 36px;
+    
+}
+.birthday{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 4em;
+    /* background-color: rgb(216, 240, 170); */
+}
+.birthday >.bleft{
+    margin-top: 10em;
+    padding-right: 20px;
+/* background-color: aqua; */
+    width: 30%;
+    height: 20rem;
+    text-align: center;
+    /* background-color: aqua; */
+}
+.birthday >.bleft>h1{
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 3px;
+    padding-bottom: 14px;
+    text-align: left;
+}
+.birthday >.bleft>p{
+    font-size: 16px;
+    font-weight: 520;
+    line-height: 20px;
+    letter-spacing: 1px;
+    padding-bottom: 14px;
+    text-align: left;
+}
+#para{
+    padding-bottom: 0px;
+    text-align: left;
+    position: relative;
+    /* text-decoration: underline;
+    text-decoration:underline green 12px ; */
+}
+#para::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 95%;
+    transform: translateY(-50%);
+    height: 3px; /* Thickness of the line */
+    width: 18%; /* Length of the line */
+    background-color: green; /* Color of the line */
+  }
+
+
+#para>img{
+    rotate: 180deg;
+  margin-left: 10px;
+  margin-top: -20px;
+    
+}
+#para:hover,#para>img:hover{
+    color: rgb(73, 99, 47);
+    cursor: pointer;
+}
+.bright>img{
+    height: 50%;
+}
+.dark{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* margin-top: 4em; */
+    background-color: rgb(46, 48, 43);
+    color: rgb(241, 248, 228);
+   height: 50%;
+   width: 100%;
+    
+   
+}
+
+.dark >.bleft>h1{
+    /* margin-top: 10em; */
+    padding-right: 20px;
+    width: 30%;
+    /* height: 20rem; */
+    text-align: center;
+    color: #39e97c;
+    font-size: 60px;
+    font-weight: 500;
+
+}
+.dark >.bleft>p{
+    color: aliceblue;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#para1{
+    position: relative;
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 10px; /* Add space for the line */
+  }
+
+  #para1::before {
+    content: "";
+    position: absolute;
+    left: 10;
+    top: 95%;
+    transform: translateY(-50%);
+    height: 2px; /* Thickness of the line */
+    width: 18%; /* Length of the line */
+    background-color: green; /* Color of the line */
+  }
+  .group{
+    background-color: rgb(241, 248, 228);
+  }
+  .groupright{
+background-image: url('whatsApp/grp.png');
+width: 50%;
+height: 40rem;
+background-repeat: no-repeat;
+background-position: center;
+
+  }
+  .groupright>img{
+      width:60%;
+      height: 60%;
+      /* position: absolute; */
+      /* padding-top: 40%; */
+      padding-left: 10%;
+      /* padding-right:-30px ; */
+margin-top: 20%;
+margin-left: 20%;
+  }
